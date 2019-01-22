@@ -21,7 +21,7 @@ class SuccessfulRegistration {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 		driver = new ChromeDriver();
 	}
 
@@ -35,7 +35,7 @@ class SuccessfulRegistration {
 	void test() {
 		driver.get("http://automationpractice.com/index.php");
 		driver.findElement(By.partialLinkText("Sign in")).click();
-		driver.findElement(By.id("email_create")).sendKeys("wfa33@ax3a.xax");
+		driver.findElement(By.id("email_create")).sendKeys("wfa33dd@ax3a.xax");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.id("SubmitCreate")).click();
 		driver.findElement(By.id("customer_firstname")).sendKeys("x");

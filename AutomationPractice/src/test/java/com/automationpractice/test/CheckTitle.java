@@ -15,7 +15,7 @@ public class CheckTitle {
 
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 		driver = new ChromeDriver();
 	}
 
