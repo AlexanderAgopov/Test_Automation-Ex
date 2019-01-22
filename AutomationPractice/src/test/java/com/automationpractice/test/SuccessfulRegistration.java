@@ -21,7 +21,7 @@ class SuccessfulRegistration {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
 	}
 
@@ -35,23 +35,16 @@ class SuccessfulRegistration {
 	void test() {
 		driver.get("http://automationpractice.com/index.php");
 		driver.findElement(By.partialLinkText("Sign in")).click();
-		WebElement emailField = driver.findElement(By.id("email_create"));
-		emailField.sendKeys("x2@x2.x2");
+		driver.findElement(By.id("email_create")).sendKeys("wfa33@ax3a.xax");
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.id("SubmitCreate")).click();
-		WebElement firstNameField = driver.findElement(By.id("customer_firstname"));
-		firstNameField.sendKeys("x");
-		WebElement lastNameField = driver.findElement(By.id("customer_lastname"));
-		lastNameField.sendKeys("x");
-		WebElement passwordField = driver.findElement(By.id("passwd"));
-		passwordField.sendKeys("xxxxx");
-		WebElement addressField = driver.findElement(By.id("address1"));
-		addressField.sendKeys("8 Swanson St.  Brookfield, WI 53045");
-		WebElement cityField = driver.findElement(By.id("city"));
-		cityField.sendKeys("X");
-		WebElement postalCodeField = driver.findElement(By.id("postcode"));
-		postalCodeField.sendKeys("11111");
-		WebElement mobilePhoneField = driver.findElement(By.id("phone_mobile"));
-		mobilePhoneField.sendKeys("+1543543543");
+		driver.findElement(By.id("customer_firstname")).sendKeys("x");
+		driver.findElement(By.id("customer_lastname")).sendKeys("x");
+		driver.findElement(By.id("passwd")).sendKeys("xxxxx");
+		driver.findElement(By.id("address1")).sendKeys("8 Swanson St.  Brookfield, WI 53045");
+		driver.findElement(By.id("city")).sendKeys("X");
+		driver.findElement(By.id("postcode")).sendKeys("11111");
+		driver.findElement(By.id("phone_mobile")).sendKeys("+1543543543");
 		Select state = new Select(driver.findElement(By.id("id_state")));
 		state.selectByIndex(4);
 		driver.findElement(By.id("submitAccount")).click();
